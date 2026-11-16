@@ -1,21 +1,21 @@
-const helper = require ('./helper.js'); 
-const React = require('react'); 
-const {useState, useEffect} = React; 
-const {createRoot} = require('react-dom/client');
+const helper = require('./helper.js');
+const React = require('react');
+const { useState, useEffect } = React;
+const { createRoot } = require('react-dom/client');
 
 const handleDomo = (e, onDomoAdded) => {
-    e.preventDefault(); 
-    helper.hideError(); 
+    e.preventDefault();
+    helper.hideError();
 
-    const name = e.target.querySelector('#domoName').value; 
-    const age = e.target.querySelector('#domoAge').value; 
+    const name = e.target.querySelector('#domoName').value;
+    const age = e.target.querySelector('#domoAge').value;
 
-    if(!name || !age){
+    if (!name || !age) {
         helper.handleError('All fields are required');
-        return false; 
+        return false;
     }
 
-    helper.sendPost(e.target.action, {name,age}, onDomoAdded);
+    helper.sendPost(e.target.action, { name, age }, onDomoAdded);
     return false;
 }
 
@@ -28,9 +28,9 @@ const DomoForm = (props) => {
             method="POST"
             className="domoForm"
         >
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="domoName">Name: </label>
             <input id="domoName" type="text" name="name" placeholder="Domo Name" />
-            <label htmlFor="age">Age: </label>
+            <label htmlFor="domoAge">Age: </label>
             <input id="domoAge" type="number" min="0" name="age" />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
         </form>
@@ -59,7 +59,7 @@ const DomoList = (props) => {
 
     const domoNodes = domos.map(domo => {
         return (
-            <div key={domo.id} className="domo">
+            <div key={domo._id} className="domo">
                 <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
                 <h3 className="domoName">Name: {domo.name}</h3>
                 <h3 className="domoAge">Age: {domo.age}</h3>
