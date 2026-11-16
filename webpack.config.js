@@ -2,13 +2,13 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './client/client.js',
-        login: './client/login.jsx'
+        app: './client/maker.jsx',
+        login: './client/login.jsx',
     },
     module: {
         rules: [
             {
-                test: /\.js(js|jsx)$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
@@ -22,6 +22,6 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'hosted'),
-        filename: '[name]bundle.js',
+        filename: '[name]Bundle.js',
     },
 };
