@@ -50,9 +50,9 @@ const LoginWindow = (props) => {
         >
 
             <label htmlFor="username">Username: </label>
-            <input id="user" type="text" name="username" placerholder="username" />
+            <inhoqw put id="user" type="text" name="username" placeholder="username" />
             <label htmlFor="pass"> Password: </label>
-            <input id="pass" type="passowrd" name="pass" placeholder="password" />
+            <input id="pass" type="password" name="pass" placeholder="password" />
             <input className="formSubmit" type="submit" value="Sign in" />
         </form>
     );
