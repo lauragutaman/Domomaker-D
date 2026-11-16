@@ -49,8 +49,8 @@ const LoginWindow = (props) => {
             className="mainForm"
         >
 
-            <label htmlFor="username">Username: </label>
-            <inhoqw put id="user" type="text" name="username" placeholder="username" />
+            <label htmlFor="user">Username: </label>
+            <input id="user" type="text" name="username" placeholder="username" />
             <label htmlFor="pass"> Password: </label>
             <input id="pass" type="password" name="pass" placeholder="password" />
             <input className="formSubmit" type="submit" value="Sign in" />
